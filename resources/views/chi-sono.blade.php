@@ -6,6 +6,11 @@
     <title>Document</title>
 </head>
 <body>
+<nav>
+    <a class="nav-link" href="/">Home</a>
+    <a class="nav-link" href="/chi-sono">Chi sono</a>
+    <a class="nav-link" href="/contatti">Contatti</a>
+</nav>
     <h1> {{ $title }} </h1>
 
     <p> {{ $description }} </p>
