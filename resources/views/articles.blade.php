@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antropologia Facile | Chi sono</title>
+    <title>Antropologia Facile | Articoli</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body class="text-bg-secondary p-3">
@@ -42,9 +42,22 @@
     </div>
   </div>
 </nav>
-    <h1> {{ $title }} </h1>
 
-    <p> {{ $description }} </p>
+<h1 class= "mt-5 mb-5">Articoli</h1>
 
-</body>
-</html>
+
+
+<div>
+      @if($articles)
+          <ul>
+              @foreach($articles as $index => $article)
+              <li class="mt-2 mb-2" > <a class="text-light fs-3 text-decoration-none" href="{{ route('article', $index)}}"> {{ $article['title'] }} </a></li>
+              @endforeach
+          </ul>
+      @else
+          <p>Non ci sono articoli disponibili</p>
+      @endif    
+      
+</div>
+
+

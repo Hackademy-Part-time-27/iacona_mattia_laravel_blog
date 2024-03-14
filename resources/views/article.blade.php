@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antropologia Facile | Chi sono</title>
+    <title>Antropologia Facile | Articoli</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body class="text-bg-secondary p-3">
@@ -42,9 +42,14 @@
     </div>
   </div>
 </nav>
-    <h1> {{ $title }} </h1>
 
-    <p> {{ $description }} </p>
+<h1 class="title mt-5 mb-5">{{ $article['title'] }} </h1>
 
-</body>
-</html>
+<div>
+<h2 class="mb-3"> {{ $article['category'] }} </h2>
+
+<h3> {{ $article['description'] }} </h3>
+</div>
+<div>
+  <button type="button" class="btn btn-primary mt-5"> <a class="text-light text-decoration-none"href= "/articoli">Torna agli articoli</a></button>
+</div>
