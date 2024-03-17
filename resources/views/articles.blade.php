@@ -48,16 +48,23 @@
 
 
 <div>
-      @if($articles)
-          <ul>
-              @foreach($articles as $index => $article)
-              <li class="mt-2 mb-2" > <a class="text-light fs-3 text-decoration-none" href="{{ route('article', $index)}}"> {{ $article['title'] }} </a></li>
-              @endforeach
-          </ul>
+     @if($articles)
+        @foreach($articles as $index =>$article)
+        <div class="container text-center">
+          <div class="card mb-2">
+              <div class="card-body">
+                    <h2 class="card-title"> {{ $article['title'] }} </h2>
+                    <h3 class="card-subtitle mb-2 text-body-secondary"> {{ $article['category'] }} </h3>
+                    <p class="card-text"> {{ $article['description'] }} </p>
+                    <a class="stretched-link" href=" {{ route('article', $index)}} ">Approfondisci</a>
+              </div>
+          </div>
+        </div>
+        @endforeach
       @else
-          <p>Non ci sono articoli disponibili</p>
-      @endif    
-      
+            <p>Nessun articolo da mostrare</p>
+      @endif
+    
 </div>
 
 
