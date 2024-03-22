@@ -1,10 +1,12 @@
 <?php
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class, 'home'])->name('home');  //naming delle rotte
 
-Route::get('/contatti', [PageController::class, 'contacts'])->name('contatti');
+Route::get('/contatti', [ContactController::class, 'contacts'])->name('contatti');
+Route::post('/contatti/invia', [ContactController::class, 'invia'])->name('contatti.invia');
 
 Route::get('/chi-sono', [PageController::class, 'aboutMe'])->name('chi-sono');
 

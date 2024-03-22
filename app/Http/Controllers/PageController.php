@@ -31,9 +31,7 @@ class PageController extends Controller
         return view('home', ['title' => 'Antropologia Facile']);
     }
 
-    public function contacts(){
-        return view('contatti', ['title' => 'Contatti']);
-    }
+    
 
     public function aboutMe(){
         return view('chi-sono', [
