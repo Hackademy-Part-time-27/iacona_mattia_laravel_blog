@@ -13,6 +13,8 @@ Route::get('/chi-sono', [PageController::class, 'aboutMe'])->name('chi-sono');
 
 Route::get('/articoli', [PageController::class, 'articles'])->name('articles');
 
-Route::get('/articoli/create', [ArticleController::class, 'create'])->name('articles.create');
-
 Route::get('/articolo/{article}', [PageController::class, 'article'])->name('article');
+
+Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index');
+Route::get('/articles/create', [ArticleController::class, 'create'])->name('articles.create');
+Route::post('/articles/store', [ArticleController::class, 'store'])->name('articles.store');

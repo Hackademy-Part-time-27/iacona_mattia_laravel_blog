@@ -12,16 +12,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
+          <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/articoli">Articoli</a>
+          <a class="nav-link" href="{{ route('articles') }}">Articoli</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/chi-sono">Chi sono</a>
+          <a class="nav-link" href="{{ route('chi-sono') }}">Chi sono</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="/contatti">Contatti</a>
+        <a class="nav-link" href="{{ route('contatti') }}">Contatti</a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/">Action</a></li>
             <li><a class="dropdown-item" href="/chi-sono">Another action</a></li>
@@ -31,6 +31,7 @@
         </li>
         
       </ul>
+      <a href="{{ route('articles.create') }}" class="btn btn-warning m fw-bold me-5">Crea articolo</a>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
