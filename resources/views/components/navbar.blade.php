@@ -3,39 +3,40 @@
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand">
-      <img style="max-width: 15%" src="{{ asset('img/logo.png') }}" alt="">
-      <strong>{{ config('app.name') }}</strong></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ route('articles') }}">Articoli</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ route('chi-sono') }}">Chi sono</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="{{ route('contatti') }}">Contatti</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/">Action</a></li>
-            <li><a class="dropdown-item" href="/chi-sono">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/contatti">Something else here</a></li>
+      <a class="navbar-brand">
+          <img style="max-width: 15%" src="{{ asset('img/logo.png') }}" alt="">
+        <strong>{{ config('app.name') }}</strong></a>    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{{ route('articles') }}">Articoli</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{{ route('chi-sono') }}">Chi sono</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{{ route('contatti') }}">Contatti</a>
+              </li>
           </ul>
-        </li>
-        
-      </ul>
-      <a href="{{ route('articles.create') }}" class="btn btn-warning m fw-bold me-5">Crea articolo</a>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
+          @auth
+          
+          
+            <a href="{{ route('articles.index') }}" class="btn btn-warning fw-bold me-4">GESTIONE ARTICOLI</a>
+            
+            <form action="/logout" method="POST">
+              @csrf
+              <button type="submit" class="btn btn-danger fw-bold">ESCI</button>
+            </form>   
+
+          @else
+            <a href="/login" class="btn btn-warning fw-bold me-4">ACCEDI</a>
+            <a href="/register" class="btn btn-warning fw-bold">REGISTRATI</a>
+
+
+          @endauth
+        </div>
   </div>
 </nav>

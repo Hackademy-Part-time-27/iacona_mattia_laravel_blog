@@ -1,23 +1,32 @@
 <x-layout title="Articoli">
 
-<h1 class= "mt-5 mb-5">Articoli</h1>
-
-<div>
-     @if($articles)
-          @foreach($articles as $article)              
-              <x-card 
-                    :title="$article->title"
-                    :category="$article->category"
-                    :description="$article->description"
-                    :body="$article->body"
-                    :route="route('article', $article)"
-             />
-          @endforeach
-      @else
-            <p>Nessun articolo da mostrare</p>
-      @endif
-    
-</div>
+      <div class="container text-center">
+            
+                  <div class="col">
+                        <h1 class= "mt-5 mb-5">Articoli</h1>
+                  </div>      
+                  <div class="col">      
+                        <a href="{{ route('articles.create') }}" class="btn btn-warning fw-bold mb-5">CREA ARTICOLO</a>
+                  </div> 
+            
+      </div>   
+            <div>
+            @if($articles)
+                  @foreach($articles as $article)              
+                        <x-card 
+                              :title="$article->title"
+                              :category="$article->category"
+                              :description="$article->description"
+                              :body="$article->body"
+                              :route="route('article', $article)"
+                        />
+                  @endforeach
+                  @else
+                        <p>Nessun articolo da mostrare</p>
+                  @endif
+            
+            </div>
+           
 </x-layout>
 
 
