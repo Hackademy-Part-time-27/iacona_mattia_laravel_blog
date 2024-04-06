@@ -22,7 +22,9 @@
               </li>
           </ul>
           @auth
-          
+
+
+            <a class="me-5 fw-bold nav-link text-black" href=""><strong>{{ auth()->user()->email }}</strong></a>
           
             <a href="{{ route('articles.index') }}" class="btn btn-warning fw-bold me-4">GESTIONE ARTICOLI</a>
             
