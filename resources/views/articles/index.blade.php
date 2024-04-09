@@ -11,7 +11,7 @@
     <x-success />
 
     <div class="mt-5">
-        <table class="table table-bordered">
+        <table class="table table-secondary table-striped mt-5">
             <thead>
                 <tr>
                     <th>#</th>
@@ -34,7 +34,14 @@
                         <span class="badge text-bg-danger">No</span>
                         @endif
                     </td>
-                    <td></td>
+                    <td class="text-end">
+                        <a href="{{ route('articles.edit', $article) }}" class="btn btn-warning fw-bold me-4">MODIFICA</a>
+                        <form class="d-inline" action="{{ route('articles.destroy', $article) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger fw-bold">ELIMINA</button>
+                        </form>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>
