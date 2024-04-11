@@ -4,7 +4,7 @@
             <h1>Articoli</h1>
         </div>
         <div class="col-md-6 text-end">
-            <a href="{{ route('articles.create') }}" class="btn btn-warning mt-5 fs-5 fw-bold">Crea articolo</a>
+            <a href="{{ route('articles.create') }}" class="btn btn-warning mt-5 fs-5 fw-bold">CREA ARTICOLO</a>
         </div>
     </div>
 
@@ -14,11 +14,11 @@
         <table class="table table-secondary table-striped mt-5">
             <thead>
                 <tr>
-                    <th>#</th>
+                    <th>ID</th>
                     <th>Titolo</th>
                     <th>Categoria</th>
                     <th>Visibile</th>
-                    <th></th>
+                    <th class="text-end">AZIONI DISPONIBILI</th>
                 </tr>
             </thead>
             <tbody>

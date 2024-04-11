@@ -9,7 +9,10 @@ class PageController extends Controller
 {
     
     public function home(){
-        return view('home', ['title' => 'Antropologia Facile']);
+        
+        $articles = Article::orderBy('created_at', 'DESC')->take(5)->get();
+        return view('home', ['title' => 'Antropologia Facile', 'articles' => $articles]);
+    
     }
 
     

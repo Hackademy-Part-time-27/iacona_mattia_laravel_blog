@@ -5,7 +5,7 @@
             <h1>Categorie</h1>
         </div>
         <div class="col-lg-6 mt-5">
-            <a href="{{ route('categories.create') }}" class="btn btn-warning fw-bold mb-5">CREA CATEGORIA</a>
+            <a href="{{ route('categories.create') }}" class="btn btn-warning mt-5 fs-5 fw-bold">CREA CATEGORIA</a>
         </div>
     </div>
 
@@ -13,7 +13,7 @@
 
     <table class="table table-secondary table-striped mt-5">
         <thead>
-            <th>id</th>
+            <th>ID</th>
             <th>Nome</th>
             <th class="text-end">AZIONI DISPONIBILI</th>
         </thead>

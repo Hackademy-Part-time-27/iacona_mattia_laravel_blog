@@ -31,7 +31,7 @@
             
             <form action="/logout" method="POST">
               @csrf
-              <button type="submit" class="btn btn-danger fw-bold">ESCI</button>
+              <button type="submit" class="btn btn-danger fw-bold me-2">ESCI</button>
             </form>   
 
           @else

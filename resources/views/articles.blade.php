@@ -23,7 +23,7 @@
                   @endforeach
                   @else
                         <p>Nessun articolo da mostrare</p>
-                  @endif
+            @endif
             
             </div>
            
