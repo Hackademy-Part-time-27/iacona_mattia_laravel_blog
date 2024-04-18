@@ -2,18 +2,18 @@
 
   @if($article->image)
 
-    <img class="w-25 rounded mx-auto d-block mt-5 shadow-lg" src="{{ Storage::url($article->image) }}" alt="{{ $article['title'] }}">
+    <img class="w-25 rounded mx-auto d-block mt-5 shadow-lg" src="{{ Storage::url($article->image) }}" alt="{{ $article->title }}">
 
   @endif
 
-<h1 class="title mt-5 mb-5">{{ $article['title'] }}</h1>
+<h1 class="title mt-5 mb-5">{{ $article->title }}</h1>
 
 
 
 <div>
-<h2 class="mb-3"> {{ $article['category'] }} </h2>
+<h2 class="mb-3"> {{ $article->category->name }} </h2>
 
-<h3> {{ $article['description'] }} </h3>
+<h3> {{ $article->description }} </h3>
 
 </div>
 <div> 

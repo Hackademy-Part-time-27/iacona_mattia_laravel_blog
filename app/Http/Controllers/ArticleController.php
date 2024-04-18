@@ -26,7 +26,7 @@ class ArticleController extends Controller
     public function store(StoreArticleRequest $request)
     {
 
-        $article = Article::create($request->all());
+        $article = Article::create(array_merge($request->all(), ['user_id' => auth()->user()->id]));
 
         if($request->hasFile('image') && $request->file('image')->isValid()) {
             

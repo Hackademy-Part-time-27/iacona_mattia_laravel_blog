@@ -10,22 +10,20 @@
                   </div> 
             
       </div>   
-            <div>
+      <div>
             @if($articles)
-                  @foreach($articles as $article)              
-                        <x-card 
-                              :title="$article->title"
-                              :category="$article->category"
-                              :description="$article->description"
-                              :body="$article->body"
-                              :route="route('article', $article)"
-                        />
-                  @endforeach
-                  @else
-                        <p>Nessun articolo da mostrare</p>
+                @foreach($articles as $article)
+                    <x-card
+                        :category="$article->category"
+                        :title="$article->title"
+                        :description="$article->description"
+                        :route="route('article', $article)"
+                    />
+                @endforeach
+            @else
+                <p>Non ci sono articoli disponibili</p>
             @endif
-            
-            </div>
+        </div>
            
 </x-layout>
 

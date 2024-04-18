@@ -5,7 +5,7 @@
     </div>
     <div class="container">
         <div class="text-center">
-            <h2 class="mt-5">“L'antropologia richiede apertura mentale per poter guardare e ascoltare,<br> 
+            <h2 class="mt-5 fst-italic">“L'antropologia richiede apertura mentale per poter guardare e ascoltare,<br> 
                 registrare con stupore e meravigliarsi di ciò che non si sarebbe potuto indovinare.”</h2>
             <footer class="fst-italic text-end">Margaret Mead</footer>
         </div>    
@@ -24,8 +24,14 @@
                       <h5 class="mb-1">{{ $article->title }}</h5>
                       <small>{{ $article->created_at }}</small>
                     </div>
-                        <p class="mb-1">{{ $article->category }}</p>
-                        <small>{{ $article->description }}</small>
+                    {{--<p class="mb-1">{{ $article->categories->name }}</p>--}}
+                        <p class="mb-1">
+                            @foreach ($article->categories as $category)
+                                {{ $category->name }}
+                            @endforeach
+                        </p>
+                        
+                        
                 </a>
                 @endforeach
             </ul>

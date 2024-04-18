@@ -15,6 +15,7 @@
         <thead>
             <th>ID</th>
             <th>Nome</th>
+            <th>Articoli per categoria</th>
             <th class="text-end">AZIONI DISPONIBILI</th>
         </thead>
         <tbody>
@@ -22,6 +23,13 @@
             <tr>
                 <td>{{ $category->id }}</td>
                 <td>{{ $category->name }}</td>
+                <td>
+                    <ul>
+                        @foreach($category->articles as $article)
+                        <li><a class="text-decoration-none text-black" href="{{ route('article', $article) }}">{{ $article->title }}</a></li>
+                        @endforeach
+                    </ul>
+                </td>
                 <td class="text-end">
                     <a href="{{ route('categories.edit', $category) }}" class="btn btn-warning fw-bold me-4">MODIFICA</a>
                     <form class="d-inline" action="{{ route('categories.destroy', $category) }}" method="POST">
