@@ -5,6 +5,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
+use App\Livewire\Counter;
 
 Route::get('/', [PageController::class, 'home'])->name('home');  //naming delle rotte
 
@@ -36,3 +37,7 @@ Route::prefix('account')->middleware('auth')->group(function () {
     Route::resource('/categories', CategoryController::class);
 
 });
+
+Route::get('/counter', Counter::class);
+Route::get('/search-users', [PageController::class, 'searchUsers'])->name('users.search')->middleware('auth');
+Route::get('/cerca-articoli', [ArticleController::class, 'search'])->name('articles.search');

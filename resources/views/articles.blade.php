@@ -14,7 +14,7 @@
             @if($articles)
                 @foreach($articles as $article)
                     <x-card
-                        :category="$article->category"
+                        :categories="$article->categories"
                         :title="$article->title"
                         :description="$article->description"
                         :route="route('article', $article)"

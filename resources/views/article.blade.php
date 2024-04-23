@@ -11,7 +11,11 @@
 
 
 <div>
-<h2 class="mb-3"> {{ $article->category->name }} </h2>
+<h2 class="mb-3">
+  @foreach ($article->categories as $category)
+    {{ $category->name }}
+  @endforeach 
+</h2>
 
 <h3> {{ $article->description }} </h3>
 
@@ -24,6 +28,7 @@
 
 
 <div>
-  <button type="button" class="btn btn-warning mt-5 fs-5 fw-bold"> <a class="text-light text-decoration-none"href= "/articoli">Torna agli articoli</a></button>
+  <button type="button" class="btn btn-warning mt-5 fs-5 fw-bold"> 
+    <a class="text-light text-decoration-none"href= "/articoli">Torna agli articoli</a></button>
 </div>
 </x-layout>

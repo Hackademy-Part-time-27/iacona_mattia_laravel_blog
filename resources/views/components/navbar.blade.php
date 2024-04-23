@@ -20,12 +20,14 @@
               <li class="nav-item">
                   <a class="nav-link" href="{{ route('contatti') }}">Contatti</a>
               </li>
+              
           </ul>
           @auth
 
 
             <a class="me-5 fw-bold nav-link text-black" href=""><strong>{{ auth()->user()->email }}</strong></a>
-          
+
+            <a href="{{ route('users.search') }}" class="btn btn-warning fw-bold me-4">RICERCA UTENTE</a>
             <a href="{{ route('articles.index') }}" class="btn btn-warning fw-bold me-4">GESTIONE ARTICOLI</a>
             <a href="{{ route('categories.index') }}" class="btn btn-warning fw-bold me-4">GESTIONE CATEGORIE</a>
             
